@@ -15,10 +15,14 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burgers", function(req, res) {
-    db.Burger.create(req.body)
-    .then(results => {
+    db.Burger.create(req.body.burger)
+    .then(
+        db.Customer.create(req.body.customer)
+        .then(
+        results => {
         res.json({ id: results.insertId });
-    });
+        })
+    );
 });
 
 router.put("/api/burgers/:id", function(req, res) {
