@@ -2,9 +2,12 @@
   "development": {
     "username": "root",
     "password": "asdfasdf",
-    "database": "database_development",
+    "database": "burgers_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    "define": {
+      "timestamps": false
+  },
     "operatorsAliases": false
   },
   "test": {
