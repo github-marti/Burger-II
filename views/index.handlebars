@@ -10,7 +10,7 @@
   {{#each burgers}}
     {{#unless devoured}}
     <li>
-      {{burger_name}}
+      {{burger_name}} for <span class="for-customer">{{Customer.customer_name}}</span>
       <button class="devour-btn" data-id={{id}}>EAT ME</button>
     </li>
     {{/unless}}
@@ -22,7 +22,7 @@
   {{#each burgers}}
     {{#if devoured}}
     <li>
-      {{burger_name}}
+      {{burger_name}} eaten by <span class="by-customer">{{Customer.customer_name}}</span>
       <i class="fas fa-times burger-delete" data-id={{id}}></i>
     </li>
     {{/if}}
