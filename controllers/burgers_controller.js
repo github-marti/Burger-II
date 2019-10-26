@@ -1,11 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const burger = require("../models/burger");
-
+const db = require("../models");
 
 
 router.get("/", function(req, res) {
-    burger.selectAll()
+    db.Burger.findAll()
     .then(results => {
         let hbsObject = {
             burgers: results
@@ -16,17 +15,21 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burgers", function(req, res) {
-    burger.insertOne(
-        ["burger_name", "devoured"],
-        [req.body.burger_name, req.body.devoured])
+    db.Burger.create(req.body)
     .then(results => {
         res.json({ id: results.insertId });
     });
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-    var condition = `id = ${req.params.id}`;
-    burger.updateOne(req.body, condition)
+    db.Burger.update(
+        req.body,
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
     .then(results => {
         if (results.changedRows === 0) {
             return res.status(404).end();
@@ -37,8 +40,11 @@ router.put("/api/burgers/:id", function(req, res) {
 });
 
 router.delete("/api/burgers/:id", function(req, res) {
-    var condition = `id = ${req.params.id}`;
-    burger.deleteOne(condition)
+    db.Burger.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
     .then(result => {
         console.log(result);
         res.end();
