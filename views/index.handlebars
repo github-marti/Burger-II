@@ -1,0 +1,40 @@
+<header>
+<h1>No-Calorie Burgers</h1>
+<img src="../assets/images/humberger.png" style="width:150px;">
+</header>
+
+<div class="burger-container">
+
+<ul id="burgers-to-eat" class="burger-col">
+  <h2>Burgers To Eat</h2>
+  {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+      {{burger_name}}
+      <button class="devour-btn" data-id={{id}}>EAT ME</button>
+    </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<ul id="burgers-eaten" class="burger-col">
+  <h2>Devoured Burgers</h2>
+  {{#each burgers}}
+    {{#if devoured}}
+    <li>
+      {{burger_name}}
+      <i class="fas fa-times burger-delete" data-id={{id}}></i>
+    </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+</div>
+
+<div class="burger-input">
+  <h2>Input Your Burger</h2>
+  <form class="burger-form">
+    <input type="text" id="new-burger" name="name">
+    <button type="submit" id="submit-btn">Submit</button>
+  </form>
+</div>

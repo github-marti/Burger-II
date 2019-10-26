@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    font-family: 'Fredericka the Great', sans-serif;
+    color: #bd1a1a;
+    background: #ffec41;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+.burger-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.burger-container ul {
+    color: white;
+    background: #bd1a1a;
+    margin: 15px;
+    padding: 20px;
+    list-style-type: none;
+    border-radius: 5px;
+}
+
+.burger-container h2 {
+    font-family: "Fredericka the Great", sans-serif;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.burger-container li {
+    font-family: "Cutive Mono", sans-serif;
+    overflow: auto;
+}
+
+.burger-container ul:first-child {
+    margin-right: 0;
+}
+
+#burgers-to-eat li {
+    background: #ffec41;
+    color: black;
+    line-height: 60px;
+    margin: 5px 0;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.devour-btn {
+    cursor: pointer;
+    font-size: .8em;
+    float: right;
+    padding: 5px;
+    margin: 15px 0;
+    border: 2px solid #202020;
+    font-family: "Cutive Mono", sans-serif;
+}
+
+#burgers-eaten li {
+    color: white;
+    margin: 10px 0;
+    border-bottom: 2px solid white;
+}
+
+#burgers-eaten i {
+    cursor: pointer;
+    float: right;
+}
+
+.burger-input {
+    text-align: center;
+    font-family: "Cutive Mono", sans-serif;
+    margin-bottom: 20px;
+}
+
+#new-burger {
+    font-size: 1em;
+    width: 400px;
+    height: 100px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#submit-btn {
+    cursor: pointer;
+    font-family: "Cutive Mono", sans-serif;
+    display: block;
+    background: #bd1a1a;
+    color: #ffec41;
+    font-size: 1em;
+    padding: 10px;
+    margin: 10px auto;
+    border-style: none;
+}
+
