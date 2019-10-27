@@ -14,8 +14,6 @@ module.exports = function(app) {
             let hbsObject = {
                 burgers: results
             };
-            console.log("burger get results", results);
-            console.log('hbsObject', hbsObject);
             res.render("index", hbsObject);
         });
     });
